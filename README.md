@@ -1,13 +1,12 @@
-## Container for Neo4j 2.2
-
-**Note: this is just _work in progress_ alpha state, not suited for production/serious use**
+## Container for Neo4j 2.2 Community on RHEL
 
 Neo4j is an highly scalable, robust (fully ACID) native graph database. 
 It is used in mission-critical apps by thousands of leading, startups, enterprises, and governments around the world.
 
 Learn more on http://neo4j.com and get started with http://neo4j.com/developer
 
-This Dockerfile creates a container for Neo4j 2.2.2 community edition that is ready to run and can link to your external data directories.
+This Dockerfile creates a container for Neo4j 2.2.2 community edition to run on RedHat Enterprise Linux 
+that is ready to run and can link to your external data directories.
 
 ### Setup
 
@@ -15,6 +14,7 @@ This Dockerfile creates a container for Neo4j 2.2.2 community edition that is re
 
 ```
 git clone https://github.com/neo4j-contrib/docker-neo4j
+git checkout 2.2.2-rhel
 cd docker-neo4j
 docker build .
 
@@ -49,8 +49,3 @@ If you set an environment variable `NEO4J_NO_AUTH` to a non-empty value, Neo4j's
 ### Configuration
 
 You can also mount a `conf` (`-v $HOME/my-neo-conf:/conf`) directory whose content will be copied over Neo4j's configuration.
-
-### TODO
-
-* Provide initial password externally
-* Memory Tuning Options (esp. page-cache)
