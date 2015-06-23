@@ -6,9 +6,9 @@ FROM registry.access.redhat.com/rhel
 MAINTAINER Michael Hunger, <michael.hunger@neotechnology.com>
 
 # Update image
-RUN yum update -y
+RUN yum update -y;yum -y clean all
 
-RUN yum -y install which tar java-1.8.0-openjdk-headless.x86_64
+RUN yum -y install which tar java-1.8.0-openjdk-headless.x86_64; yum -y clean all
 RUN curl http://dist.neo4j.org/neo4j-community-2.2.2-unix.tar.gz -o - | tar xzf - -C /var/lib && ln -s /var/lib/neo4j-* /var/lib/neo4j
 
 ## add launcher and set execute property
