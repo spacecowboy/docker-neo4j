@@ -1,7 +1,7 @@
 # Container with Neo4j Server
 # Repository http://github.com/neo4j-contrib/docker-neo4j
 
-FROM registry.access.redhat.com/rhel 
+FROM rhel 
 
 MAINTAINER Michael Hunger, <michael.hunger@neotechnology.com>
 
