@@ -16,9 +16,7 @@ if [ "$limit" -lt 65536 ]; then
     ulimit -n 65536;
 fi
 
-rm -rf $NEO4J_HOME/data
 mkdir -p /data/log /data/dbms /data/graph.db
-ln -s /data $NEO4J_HOME/data
 
 # override what's needed
 cp /conf/* $NEO4J_HOME/conf/
