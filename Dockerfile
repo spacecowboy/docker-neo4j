@@ -11,6 +11,9 @@ RUN yum update -y;yum -y clean all
 RUN yum -y install which tar java-1.8.0-openjdk-headless.x86_64; yum -y clean all
 RUN curl http://dist.neo4j.org/neo4j-community-2.2.2-unix.tar.gz -o - | tar xzf - -C /var/lib && ln -s /var/lib/neo4j-* /var/lib/neo4j
 
+# Link to /data mount point
+RUN rm -rf /var/lib/neo4j/data; ln -s /data /var/lib/neo4j/data
+
 ## add launcher and set execute property
 # enable shell server on all network interfaces
 # change data directory to /data/graph.db for external linking
