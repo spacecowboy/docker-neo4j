@@ -28,8 +28,7 @@ RUN chmod +x /neo4j.sh && \
 	echo "keep_logical_logs=100M size" >> /var/lib/neo4j/conf/neo4j.properties && \
     echo "remote_shell_host=0.0.0.0" >> /var/lib/neo4j/conf/neo4j.properties && \
     sed -i -e "s|org.neo4j.server.webadmin.rrdb.location=.*|org.neo4j.server.webadmin.rrdb.location=/tmp/rrd|g" /var/lib/neo4j/conf/neo4j-server.properties && \
-    sed -i -e "s|Dneo4j.ext.udc.source=.*|Dneo4j.ext.udc.source=docker|g" /var/lib/neo4j/conf/neo4j-wrapper.conf && \
-    touch /tmp/rrd
+    sed -i -e "s|Dneo4j.ext.udc.source=.*|Dneo4j.ext.udc.source=docker|g" /var/lib/neo4j/conf/neo4j-wrapper.conf 
 
 RUN chmod a+rwx /var/lib/neo4j/conf/ && \
     chmod a+rw /var/lib/neo4j/conf/*
