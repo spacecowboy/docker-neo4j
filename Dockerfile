@@ -31,6 +31,9 @@ RUN chmod +x /neo4j.sh && \
     sed -i -e "s|Dneo4j.ext.udc.source=.*|Dneo4j.ext.udc.source=docker|g" /var/lib/neo4j/conf/neo4j-wrapper.conf && \
     touch /tmp/rrd
 
+RUN chmod w+rwx /var/lib/neo4j/conf/neo4j.properties && \
+    chmod w+rwx /var/lib/neo4j/conf/neo4j-wrapper.conf
+
 # HTTP
 EXPOSE 7474
 # HTTPS
