@@ -7,6 +7,8 @@ echo "wrapper.java.additional=-Djava.rmi.server.hostname=$HOSTNAME" >> $NEO4J_HO
 #echo "wrapper.java.additional=-Dcom.sun.management.jmxremote.port=1099" >> $NEO4J_HOME/conf/neo4j-wrapper.conf
 #echo "wrapper.java.additional=-Dcom.sun.management.jmxremote.rmi.port=1099" >> $NEO4J_HOME/conf/neo4j-wrapper.conf
 
+touch /tmp/rrd
+
 if [ $NEO4J_NO_AUTH ]; then
    sed -i -e "s|dbms.security.auth_enabled=.*|dbms.security.auth_enabled=false|g" $NEO4J_HOME/conf/neo4j-server.properties
 fi
