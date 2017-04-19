@@ -5,8 +5,12 @@ language: c
 services:
   - docker
 
+env:
+  - NEO4J_VERSION=3.1.3
+  - NEO4J_VERSION=3.2.0-alpha08
+
 before_install:
-- echo "NEO4J_VERSION=3.2.0-alpha08" > devenv.local
+- echo "NEO4J_VERSION=${NEO4J_VERSION}" > devenv.local
 
 script:
 - source devenv && make test
