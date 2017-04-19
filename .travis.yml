@@ -1,0 +1,12 @@
+sudo: required
+
+language: c
+
+services:
+  - docker
+
+before_install:
+- echo "NEO4J_VERSION=3.2.0-alpha08" > devenv.local
+
+script:
+- source devenv && make test
